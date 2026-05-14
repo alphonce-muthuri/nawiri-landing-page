@@ -22,7 +22,7 @@ export default function ComingSoonPage() {
             We&apos;re still building this
           </h1>
           <p className="text-muted-foreground text-[15px] leading-relaxed mb-8">
-            This page isn&apos;t ready yet. Check back soon — or head back home.
+            This page isn&apos;t ready yet. Check back soon - or head back home.
           </p>
           <Button asChild className="bg-primary text-white hover:bg-primary/90 rounded-lg h-10 px-6">
             <Link href="/">Back to home</Link>

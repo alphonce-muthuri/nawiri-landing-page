@@ -40,9 +40,9 @@ export function Hero() {
             sizes="100vw"
           />
 
-          {/* Top gradient — softer, shows more image */}
+          {/* Top gradient - softer, shows more image */}
           <div className="absolute inset-x-0 top-0 h-[52%] bg-gradient-to-b from-background/80 via-background/20 to-transparent pointer-events-none" />
-          {/* Bottom gradient — rich, full coverage for legibility */}
+          {/* Bottom gradient - rich, full coverage for legibility */}
           <div className="absolute inset-x-0 bottom-0 h-[52%] bg-gradient-to-t from-background via-background/85 to-transparent pointer-events-none" />
 
           {/* ── Top: badge + headline ── */}
@@ -97,7 +97,7 @@ export function Hero() {
               variants={fadeUp}
               className="text-[13px] sm:text-sm text-foreground/65 leading-relaxed mb-5 max-w-[300px]"
             >
-              Banking, savings, investments, and remittances — one app, via mobile, USSD, or WhatsApp.
+              Banking, savings, investments, and remittances - one app, via mobile, USSD, or WhatsApp.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-col gap-2.5 sm:flex-row">
@@ -123,7 +123,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Stats — divide-x divide-y grid, editorial style */}
+        {/* Stats - divide-x divide-y grid, editorial style */}
         <motion.div
           variants={stagger(0.07)}
           initial="hidden"
