@@ -82,12 +82,12 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border">
+    <footer className="min-w-0 border-t border-border overflow-x-hidden">
       {/* Pre-footer CTA */}
       <div className="border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-5">
-            <div>
+        <div className="max-w-6xl mx-auto min-w-0 px-4 sm:px-6 py-8 sm:py-10">
+          <div className="flex min-w-0 flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-5">
+            <div className="min-w-0">
               <h3 className="text-[17px] font-semibold tracking-tight mb-1">
                 Ready to bank smarter?
               </h3>
@@ -109,10 +109,10 @@ export function Footer() {
       </div>
 
       {/* Main footer */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-[180px_1fr_1fr_1fr_1fr] gap-x-5 gap-y-7 sm:gap-8 mb-7 sm:mb-10">
+      <div className="max-w-6xl mx-auto min-w-0 px-4 sm:px-6 py-8 sm:py-12">
+        <div className="grid min-w-0 grid-cols-2 sm:grid-cols-3 lg:grid-cols-[180px_1fr_1fr_1fr_1fr] gap-x-5 gap-y-7 sm:gap-8 mb-7 sm:mb-10">
           {/* Brand */}
-          <div className="col-span-2 sm:col-span-3 lg:col-span-1">
+          <div className="col-span-2 min-w-0 sm:col-span-3 lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2 mb-3 group">
               <Image
                 src={LOGO_SRC}
@@ -141,7 +141,7 @@ export function Footer() {
 
           {/* Link columns */}
           {footerColumns.map((column) => (
-            <div key={column.title}>
+            <div key={column.title} className="min-w-0">
               <p className="text-xs font-semibold mb-4 tracking-wide">{column.title}</p>
               <ul className="space-y-2.5">
                 {column.links.map((item) => (
@@ -162,7 +162,7 @@ export function Footer() {
         <Separator className="mb-6" />
 
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <p className="text-[11.5px] text-muted-foreground max-w-lg leading-relaxed">
+          <p className="text-[11.5px] text-muted-foreground max-w-lg min-w-0 leading-relaxed break-words">
             © 2026 Nawiri. CBK-licensed Digital Credit Provider · Kenya DPA (2019) aligned.
           </p>
           <div className="text-[11.5px] text-muted-foreground">

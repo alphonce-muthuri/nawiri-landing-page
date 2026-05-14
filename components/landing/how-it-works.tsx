@@ -30,9 +30,9 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-16 sm:py-24 lg:py-28 bg-card border-t border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-20 items-center">
+    <section id="how-it-works" className="min-w-0 py-16 sm:py-24 lg:py-28 bg-card border-t border-border">
+      <div className="max-w-6xl mx-auto min-w-0 px-4 sm:px-6">
+        <div className="grid min-w-0 lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-20 items-center">
 
           {/* ── Left - image (desktop) ── */}
           <motion.div

@@ -59,12 +59,12 @@ function Stars({ count = 5 }: { count?: number }) {
 
 export function Testimonials() {
   return (
-    <section id="about" className="py-16 sm:py-24 lg:py-28 bg-card border-t border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="about" className="min-w-0 py-16 sm:py-24 lg:py-28 bg-card border-t border-border">
+      <div className="max-w-6xl mx-auto min-w-0 px-4 sm:px-6">
 
         {/* Header */}
         <motion.div
-          className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-14"
+          className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4 mb-8 sm:mb-14"
           variants={stagger(0.1)}
           initial="hidden"
           whileInView="show"
@@ -72,28 +72,28 @@ export function Testimonials() {
         >
           <motion.div variants={fadeUp} className="min-w-0">
             <span className="section-label">Customers</span>
-            <h2 className="text-[1.75rem] sm:text-4xl lg:text-[40px] font-semibold tracking-[-0.02em] leading-[1.1]">
+            <h2 className="text-[1.6rem] min-[360px]:text-[1.65rem] min-[400px]:text-3xl sm:text-4xl lg:text-[40px] font-semibold tracking-[-0.02em] leading-[1.12] sm:leading-[1.1] text-balance">
               Built for{" "}
               <span className="text-primary underline-yellow">everyday Kenya</span>
             </h2>
           </motion.div>
-          <motion.div variants={fadeUp} className="flex items-center gap-x-2 shrink-0">
+          <motion.div variants={fadeUp} className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 shrink-0">
             <Stars />
-            <span className="text-sm font-semibold">6 pillars</span>
-            <span className="text-sm text-muted-foreground">· one ecosystem</span>
+            <span className="text-xs sm:text-sm font-semibold">6 pillars</span>
+            <span className="text-xs sm:text-sm text-muted-foreground">· one ecosystem</span>
           </motion.div>
         </motion.div>
 
         {/* Featured quote */}
         <motion.div
-          className="border border-border rounded-xl sm:rounded-2xl p-5 sm:p-8 lg:p-10 mb-5 sm:mb-8 bg-white"
+          className="min-w-0 border border-border rounded-xl sm:rounded-2xl p-5 sm:p-8 lg:p-10 mb-5 sm:mb-8 bg-white"
           variants={scaleIn}
           initial="hidden"
           whileInView="show"
           viewport={viewport}
         >
           <Stars />
-          <blockquote className="text-[15px] sm:text-[18px] lg:text-[20px] font-medium leading-[1.55] tracking-tight mt-4 sm:mt-5 mb-5 sm:mb-7 max-w-3xl">
+          <blockquote className="min-w-0 text-[15px] sm:text-[18px] lg:text-[20px] font-medium leading-[1.55] tracking-tight mt-4 sm:mt-5 mb-5 sm:mb-7 max-w-3xl break-words">
             &ldquo;{featured.quote}&rdquo;
           </blockquote>
           <div className="flex items-center gap-3">
@@ -122,7 +122,7 @@ export function Testimonials() {
               className="shrink-0 w-[248px] border border-border rounded-xl p-4 bg-white"
             >
               <Stars />
-              <p className="text-[12.5px] text-foreground leading-relaxed mt-3 mb-4">
+              <p className="text-[12.5px] text-foreground leading-relaxed mt-3 mb-4 break-words">
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div className="flex items-center gap-2.5 pt-3 border-t border-border">
@@ -153,7 +153,7 @@ export function Testimonials() {
               className="border border-border rounded-xl p-4 sm:p-5 bg-white hover:border-primary/20 transition-colors"
             >
               <Stars />
-              <p className="text-[13px] text-foreground leading-relaxed mt-3 mb-4">
+              <p className="text-[13px] text-foreground leading-relaxed mt-3 mb-4 break-words">
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div className="flex items-center gap-2.5 pt-3 border-t border-border">

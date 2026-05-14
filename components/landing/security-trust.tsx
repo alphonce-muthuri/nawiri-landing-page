@@ -23,12 +23,13 @@ const statusRows = [
 
 export function SecurityTrust() {
   return (
-    <section id="security" className="py-16 sm:py-24 lg:py-28 border-t border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-20 items-center">
+    <section id="security" className="min-w-0 py-16 sm:py-24 lg:py-28 border-t border-border">
+      <div className="max-w-6xl mx-auto min-w-0 px-4 sm:px-6">
+        <div className="grid min-w-0 lg:grid-cols-2 gap-10 lg:gap-12 xl:gap-20 items-center">
 
           {/* ── Left ── */}
           <motion.div
+            className="min-w-0"
             variants={stagger(0.09)}
             initial="hidden"
             whileInView="show"
@@ -47,7 +48,7 @@ export function SecurityTrust() {
 
             <motion.div
               variants={stagger(0.08)}
-              className="grid grid-cols-1 min-[400px]:grid-cols-2 gap-3 sm:gap-5 mb-8 sm:mb-10"
+              className="grid grid-cols-1 min-[360px]:grid-cols-2 gap-3 sm:gap-5 mb-8 sm:mb-10"
             >
               {items.map((item) => {
                 const Icon = item.icon;
@@ -80,7 +81,7 @@ export function SecurityTrust() {
 
           {/* ── Right ── */}
           <motion.div
-            className="flex flex-col gap-3"
+            className="flex min-w-0 flex-col gap-3"
             variants={slideRight}
             initial="hidden"
             whileInView="show"
@@ -100,7 +101,7 @@ export function SecurityTrust() {
             </div>
 
             <div className="border border-border rounded-xl p-4 sm:p-5 bg-card overflow-hidden">
-              <div className="flex flex-col min-[400px]:flex-row min-[400px]:items-center justify-between gap-2 mb-3 sm:mb-4">
+              <div className="flex flex-col min-[360px]:flex-row min-[360px]:items-center justify-between gap-2 mb-3 sm:mb-4">
                 <p className="text-[13px] sm:text-[13.5px] font-semibold">Security dashboard</p>
                 <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-medium text-muted-foreground shrink-0">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block animate-pulse" />

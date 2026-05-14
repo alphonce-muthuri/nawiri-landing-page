@@ -41,9 +41,9 @@ export function Navbar() {
           : "bg-white/95 backdrop-blur-sm border-b border-transparent"
       )}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14 sm:h-[60px]">
+      <div className="max-w-6xl mx-auto min-w-0 px-4 sm:px-6 flex items-center justify-between h-14 sm:h-[60px]">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
+        <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2 group">
           <Image
             src={LOGO_SRC}
             alt="Nawiri"
@@ -101,7 +101,7 @@ export function Navbar() {
         {/* Mobile menu */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" className="w-8 h-8">
+            <Button variant="ghost" size="icon" className="h-11 w-11 shrink-0 touch-manipulation" aria-label="Open menu">
               <Menu className="w-[18px] h-[18px]" />
             </Button>
           </SheetTrigger>

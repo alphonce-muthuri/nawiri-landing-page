@@ -25,8 +25,8 @@ export function Hero() {
       <div className="lg:hidden pt-[calc(3.5rem+env(safe-area-inset-top))]">
 
         <motion.div
-          className="relative w-full overflow-hidden"
-          style={{ height: "calc(100svh - 3.5rem - env(safe-area-inset-top))", minHeight: 580 }}
+          className="relative w-full min-h-0 overflow-hidden"
+          style={{ height: "calc(100svh - 3.5rem - env(safe-area-inset-top))" }}
           variants={fadeIn}
           initial="hidden"
           animate="show"
@@ -47,13 +47,13 @@ export function Hero() {
 
           {/* ── Top: badge + headline ── */}
           <motion.div
-            className="absolute inset-x-0 top-0 px-6 pt-7 sm:px-8 sm:pt-9"
+            className="absolute inset-x-0 top-0 min-w-0 px-6 pt-7 sm:px-8 sm:pt-9 pr-[7.5rem] max-[360px]:pr-20"
             variants={stagger(0.1, 0.1)}
             initial="hidden"
             animate="show"
           >
             <motion.div variants={fadeUp}>
-              <div className="mb-5 inline-flex items-center gap-2 px-3 py-[5px] rounded-full border border-primary/30 bg-primary/8 text-primary text-[9px] font-bold tracking-[0.12em] uppercase">
+              <div className="mb-5 inline-flex max-w-full flex-wrap items-center gap-2 px-3 py-[5px] rounded-full border border-primary/30 bg-primary/8 text-primary text-[9px] font-bold tracking-[0.12em] uppercase">
                 <ShieldCheck className="w-2.5 h-2.5 shrink-0" strokeWidth={2.5} />
                 CBK-Licensed · Kenya DPA
               </div>
@@ -61,7 +61,7 @@ export function Hero() {
 
             <motion.h1
               variants={fadeUp}
-              className="text-[2.6rem] min-[400px]:text-[2.875rem] sm:text-5xl font-semibold leading-[1.05] tracking-[-0.04em]"
+              className="min-w-0 max-w-full text-balance text-[2.25rem] min-[360px]:text-[2.6rem] min-[400px]:text-[2.875rem] sm:text-5xl font-semibold leading-[1.05] tracking-[-0.04em] text-white drop-shadow-[0_1px_12px_rgba(0,0,0,0.35)]"
             >
               Your <span className="text-primary">financial
               <br />freedom</span>, simplified
@@ -70,7 +70,7 @@ export function Hero() {
 
           {/* ── Mid: floating metric card ── */}
           <motion.div
-            className="absolute right-5 sm:right-7 top-[48%] -translate-y-1/2"
+            className="absolute right-5 sm:right-7 top-[48%] -translate-y-1/2 max-[360px]:hidden"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.55, ease, delay: 0.6 }}
@@ -88,14 +88,14 @@ export function Hero() {
 
           {/* ── Bottom: description + CTAs ── */}
           <motion.div
-            className="absolute inset-x-0 bottom-0 px-6 pb-9 sm:px-8 sm:pb-11"
+            className="absolute inset-x-0 bottom-0 min-w-0 px-6 pb-9 sm:px-8 sm:pb-11"
             variants={stagger(0.09, 0.3)}
             initial="hidden"
             animate="show"
           >
             <motion.p
               variants={fadeUp}
-              className="text-[13px] sm:text-sm text-foreground/65 leading-relaxed mb-5 max-w-[300px]"
+              className="text-[13px] sm:text-sm text-foreground/65 leading-relaxed mb-5 max-w-[300px] break-words"
             >
               Banking, savings, investments, and remittances - one app, via mobile, USSD, or WhatsApp.
             </motion.p>
@@ -128,12 +128,12 @@ export function Hero() {
           variants={stagger(0.07)}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-2 divide-x divide-y divide-border border-b border-border"
+          className="grid min-w-0 grid-cols-2 divide-x divide-y divide-border border-b border-border"
         >
           {stats.map((s) => (
-            <motion.div key={s.label} variants={fadeUp} className="px-6 py-4 sm:px-8 sm:py-5">
+            <motion.div key={s.label} variants={fadeUp} className="min-w-0 px-4 py-4 sm:px-8 sm:py-5">
               <p className="text-[17px] font-semibold tracking-tight leading-none">{s.value}</p>
-              <p className="text-[10px] text-muted-foreground mt-1.5 leading-snug">{s.label}</p>
+              <p className="text-[10px] text-muted-foreground mt-1.5 leading-snug break-words">{s.label}</p>
             </motion.div>
           ))}
         </motion.div>

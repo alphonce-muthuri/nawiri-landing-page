@@ -45,20 +45,20 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="py-16 sm:py-24 lg:py-28 bg-card border-t border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="features" className="min-w-0 py-16 sm:py-24 lg:py-28 bg-card border-t border-border">
+      <div className="max-w-6xl mx-auto min-w-0 px-4 sm:px-6">
 
         {/* Header */}
         <motion.div
-          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 lg:gap-6 mb-8 sm:mb-16"
+          className="flex min-w-0 flex-col lg:flex-row lg:items-end lg:justify-between gap-4 lg:gap-6 mb-8 sm:mb-16"
           variants={stagger(0.1)}
           initial="hidden"
           whileInView="show"
           viewport={viewport}
         >
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} className="min-w-0">
             <span className="section-label">Why Nawiri</span>
-            <h2 className="text-[1.75rem] sm:text-4xl lg:text-[40px] font-semibold tracking-[-0.02em] leading-[1.1]">
+            <h2 className="text-[1.65rem] min-[360px]:text-[1.75rem] sm:text-4xl lg:text-[40px] font-semibold tracking-[-0.02em] leading-[1.12] sm:leading-[1.1] text-balance">
               Six pillars built for{" "}
               <span className="underline-yellow text-brand-yellow">financial inclusion</span>
             </h2>
@@ -70,7 +70,7 @@ export function Features() {
 
         {/* Grid */}
         <motion.div
-          className="grid min-[400px]:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl sm:rounded-2xl overflow-hidden"
+          className="grid min-w-0 min-[360px]:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl sm:rounded-2xl overflow-hidden"
           variants={stagger(0.07)}
           initial="hidden"
           whileInView="show"
@@ -82,7 +82,7 @@ export function Features() {
               <motion.div
                 key={f.title}
                 variants={fadeUp}
-                className="bg-card p-4 min-[400px]:p-5 sm:p-7 hover:bg-white transition-colors duration-150 group"
+                className="min-w-0 bg-card p-4 min-[360px]:p-5 sm:p-7 hover:bg-white transition-colors duration-150 group"
               >
                 <div
                   className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center mb-4 sm:mb-5 transition-transform duration-150 group-hover:scale-105 ${
@@ -94,7 +94,7 @@ export function Features() {
                   <Icon className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]" strokeWidth={1.75} />
                 </div>
                 <h3 className="text-[13px] sm:text-[14px] font-semibold mb-1.5 sm:mb-2 tracking-tight">{f.title}</h3>
-                <p className="text-[12px] sm:text-[13.5px] text-muted-foreground leading-relaxed">{f.description}</p>
+                <p className="text-[12px] sm:text-[13.5px] text-muted-foreground leading-relaxed break-words">{f.description}</p>
               </motion.div>
             );
           })}
