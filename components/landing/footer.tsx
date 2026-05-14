@@ -109,8 +109,8 @@ export function Footer() {
       </div>
 
       {/* Main footer */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-[180px_1fr_1fr_1fr_1fr] gap-x-6 gap-y-8 sm:gap-8 mb-8 sm:mb-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-[180px_1fr_1fr_1fr_1fr] gap-x-5 gap-y-7 sm:gap-8 mb-7 sm:mb-10">
           {/* Brand */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2 mb-3 group">

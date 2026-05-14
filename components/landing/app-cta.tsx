@@ -4,12 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeUp, slideRight, stagger, viewport } from "@/lib/motion";
+import { landingPeopleImages } from "@/lib/landing-people-images";
 
 export function AppCta() {
   return (
     <section className="py-16 sm:py-24 lg:py-28 border-t border-border bg-[oklch(0.97_0.02_83)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-[1fr_400px] gap-10 lg:gap-12 xl:gap-20 items-center">
+        <div className="grid lg:grid-cols-[1fr_400px] gap-6 lg:gap-12 xl:gap-20 items-center">
 
           {/* ── Left ── */}
           <motion.div
@@ -67,17 +68,21 @@ export function AppCta() {
 
           {/* ── App visual ── */}
           <motion.div
-            className="order-1 lg:order-2 w-full rounded-2xl overflow-hidden relative aspect-[4/3] max-h-[260px] sm:max-h-[min(360px,50vw)] sm:aspect-[4/3] lg:max-h-none lg:aspect-auto lg:h-[320px] xl:h-[360px] shadow-[0_4px_24px_oklch(0_0_0/0.10)] border border-black/5"
+            className="order-1 lg:order-2 relative overflow-hidden
+              -mx-4 sm:-mx-6 lg:mx-0
+              aspect-[21/9] lg:aspect-auto lg:h-[320px] xl:h-[360px]
+              rounded-none lg:rounded-2xl
+              lg:shadow-[0_4px_24px_oklch(0_0_0/0.10)] lg:border lg:border-black/5"
             variants={slideRight}
             initial="hidden"
             whileInView="show"
             viewport={viewport}
           >
             <Image
-              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=85"
+              src={landingPeopleImages.appOnPhone}
               alt="Nawiri app on mobile phone"
               fill
-              className="object-cover"
+              className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 440px"
             />
           </motion.div>

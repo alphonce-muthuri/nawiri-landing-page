@@ -50,7 +50,7 @@ export function Features() {
 
         {/* Header */}
         <motion.div
-          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 sm:gap-6 mb-10 sm:mb-16"
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 lg:gap-6 mb-8 sm:mb-16"
           variants={stagger(0.1)}
           initial="hidden"
           whileInView="show"
@@ -58,19 +58,19 @@ export function Features() {
         >
           <motion.div variants={fadeUp}>
             <span className="section-label">Why Nawiri</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-semibold tracking-[-0.02em] leading-[1.1]">
+            <h2 className="text-[1.75rem] sm:text-4xl lg:text-[40px] font-semibold tracking-[-0.02em] leading-[1.1]">
               Six pillars built for{" "}
               <span className="underline-yellow text-brand-yellow">financial inclusion</span>
             </h2>
           </motion.div>
-          <motion.p variants={fadeUp} className="text-sm text-muted-foreground max-w-md lg:max-w-xs leading-relaxed">
+          <motion.p variants={fadeUp} className="hidden lg:block text-sm text-muted-foreground max-w-xs leading-relaxed">
             Banking, investing, remittances, micro-finance tools, digital commerce, and the technology backbone - unified so you can save fees, access opportunity, and grow.
           </motion.p>
         </motion.div>
 
         {/* Grid */}
         <motion.div
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl sm:rounded-2xl overflow-hidden"
+          className="grid min-[400px]:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl sm:rounded-2xl overflow-hidden"
           variants={stagger(0.07)}
           initial="hidden"
           whileInView="show"
@@ -82,19 +82,19 @@ export function Features() {
               <motion.div
                 key={f.title}
                 variants={fadeUp}
-                className="bg-card p-5 sm:p-7 hover:bg-white transition-colors duration-150 group"
+                className="bg-card p-4 min-[400px]:p-5 sm:p-7 hover:bg-white transition-colors duration-150 group"
               >
                 <div
-                  className={`w-9 h-9 rounded-lg flex items-center justify-center mb-5 transition-transform duration-150 group-hover:scale-105 ${
+                  className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center mb-4 sm:mb-5 transition-transform duration-150 group-hover:scale-105 ${
                     f.accent === "blue"
                       ? "bg-primary/10 text-primary"
                       : "bg-accent/50 text-accent-foreground"
                   }`}
                 >
-                  <Icon className="w-[18px] h-[18px]" strokeWidth={1.75} />
+                  <Icon className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]" strokeWidth={1.75} />
                 </div>
-                <h3 className="text-[14px] font-semibold mb-2 tracking-tight">{f.title}</h3>
-                <p className="text-[13.5px] text-muted-foreground leading-relaxed">{f.description}</p>
+                <h3 className="text-[13px] sm:text-[14px] font-semibold mb-1.5 sm:mb-2 tracking-tight">{f.title}</h3>
+                <p className="text-[12px] sm:text-[13.5px] text-muted-foreground leading-relaxed">{f.description}</p>
               </motion.div>
             );
           })}

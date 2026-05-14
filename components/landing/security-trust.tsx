@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShieldCheck, Award, Lock, Fingerprint, BadgeCheck } from "lucide-react";
-import { fadeUp, slideLeft, slideRight, stagger, viewport } from "@/lib/motion";
+import { fadeUp, slideRight, stagger, viewport } from "@/lib/motion";
+import { landingPeopleImages } from "@/lib/landing-people-images";
 
 const items = [
   { icon: ShieldCheck, title: "CBK Licensed", description: "Licensed as a Digital Credit Provider (DCP)" },
@@ -46,7 +47,7 @@ export function SecurityTrust() {
 
             <motion.div
               variants={stagger(0.08)}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-8 sm:mb-10"
+              className="grid grid-cols-1 min-[400px]:grid-cols-2 gap-3 sm:gap-5 mb-8 sm:mb-10"
             >
               {items.map((item) => {
                 const Icon = item.icon;
@@ -56,8 +57,8 @@ export function SecurityTrust() {
                       <Icon className="w-[15px] h-[15px] text-primary" strokeWidth={1.75} />
                     </div>
                     <div className="min-w-0">
-                      <p className="text-[13px] sm:text-[13.5px] font-semibold">{item.title}</p>
-                      <p className="text-[11px] sm:text-xs text-muted-foreground mt-0.5 leading-relaxed">{item.description}</p>
+                      <p className="text-[13px] font-semibold">{item.title}</p>
+                      <p className="text-[11px] text-muted-foreground mt-0.5 leading-relaxed">{item.description}</p>
                     </div>
                   </motion.div>
                 );
@@ -85,13 +86,16 @@ export function SecurityTrust() {
             whileInView="show"
             viewport={viewport}
           >
-            <div className="rounded-2xl overflow-hidden aspect-video relative shadow-[0_2px_20px_oklch(0_0_0/0.08)]">
+            <div className="rounded-2xl overflow-hidden aspect-video relative shadow-[0_2px_20px_oklch(0_0_0/0.08)] bg-muted">
               <Image
-                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=85"
-                alt="Secure mobile banking"
+                src={landingPeopleImages.securityBanking}
+                alt="Cyber security concept: shield and digital protection"
                 fill
-                className="object-cover"
-                sizes="520px"
+                placeholder="blur"
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, min(640px, 50vw)"
+                quality={85}
+                priority={false}
               />
             </div>
 

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle, Smartphone, Hash } from "lucide-react";
 import { fadeUp, slideLeft, slideRight, stagger, scaleIn, viewport } from "@/lib/motion";
+import { landingPeopleImages } from "@/lib/landing-people-images";
 
 const steps = [
   {
@@ -41,13 +42,16 @@ export function HowItWorks() {
             whileInView="show"
             viewport={viewport}
           >
-            <div className="rounded-2xl overflow-hidden aspect-[3/4] relative shadow-[0_2px_20px_oklch(0_0_0/0.08)]">
+            <div className="rounded-2xl overflow-hidden aspect-[3/4] relative shadow-[0_2px_20px_oklch(0_0_0/0.08)] bg-muted">
               <Image
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=85"
-                alt="Fast and easy mobile payment"
+                src={landingPeopleImages.howItWorks}
+                alt="Two friends smiling at sunset, one using Nawiri on a smartphone"
                 fill
-                className="object-cover"
-                sizes="500px"
+                placeholder="blur"
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, min(520px, 45vw)"
+                quality={85}
+                priority={false}
               />
             </div>
             {/* Floating stat */}
@@ -103,38 +107,41 @@ export function HowItWorks() {
 
             <motion.div
               variants={scaleIn}
-              className="lg:hidden relative rounded-2xl overflow-hidden aspect-[4/3] max-h-[280px] mb-10 border border-border shadow-[0_2px_20px_oklch(0_0_0/0.08)]"
+              className="lg:hidden relative rounded-2xl overflow-hidden aspect-[4/3] max-h-[320px] sm:max-h-[380px] mb-8 sm:mb-10 border border-border shadow-[0_2px_20px_oklch(0_0_0/0.08)] bg-muted"
             >
               <Image
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=85"
-                alt="Fast and easy mobile payment"
+                src={landingPeopleImages.howItWorks}
+                alt="Two friends smiling at sunset, one using Nawiri on a smartphone"
                 fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 500px"
+                placeholder="blur"
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, min(640px, 100vw)"
+                quality={85}
+                priority={false}
               />
             </motion.div>
 
-            <div className="mb-8 sm:mb-10">
+            <div className="mb-7 sm:mb-10">
               {steps.map((step, i) => {
                 const Icon = step.icon;
                 return (
                   <motion.div key={step.title} variants={fadeUp} className="flex gap-3 sm:gap-5">
                     {/* Icon + connector */}
                     <div className="flex flex-col items-center shrink-0">
-                      <div className="w-9 h-9 rounded-full bg-accent/50 flex items-center justify-center">
-                        <Icon className="w-[17px] h-[17px] text-accent-foreground" strokeWidth={1.75} />
+                      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-accent/50 flex items-center justify-center">
+                        <Icon className="w-4 h-4 sm:w-[17px] sm:h-[17px] text-accent-foreground" strokeWidth={1.75} />
                       </div>
                       {i < steps.length - 1 && (
-                        <div className="w-px bg-border flex-1 my-1.5 min-h-4 sm:min-h-5" />
+                        <div className="w-px bg-border flex-1 my-1.5 min-h-4" />
                       )}
                     </div>
                     {/* Content */}
-                    <div className="pb-6 sm:pb-8 last:pb-0 min-w-0">
-                      <h3 className="text-[14px] font-semibold mb-1">{step.title}</h3>
-                      <p className="text-[13.5px] text-muted-foreground leading-relaxed mb-2">
+                    <div className="pb-5 sm:pb-8 last:pb-0 min-w-0">
+                      <h3 className="text-[13.5px] sm:text-[14px] font-semibold mb-1">{step.title}</h3>
+                      <p className="text-[12.5px] sm:text-[13.5px] text-muted-foreground leading-relaxed mb-1.5">
                         {step.description}
                       </p>
-                      <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-primary">
+                      <span className="inline-flex items-center gap-1.5 text-[10.5px] sm:text-[11px] font-medium text-primary">
                         <span className="w-1 h-1 rounded-full bg-primary inline-block" />
                         {step.note}
                       </span>
@@ -145,7 +152,7 @@ export function HowItWorks() {
             </div>
 
             <motion.div variants={fadeUp}>
-              <Button className="bg-primary text-white hover:bg-primary/90 rounded-lg text-sm h-10 px-6 group shadow-[0_1px_3px_#10275d40]" asChild>
+              <Button className="w-full sm:w-auto bg-primary text-white hover:bg-primary/90 rounded-lg text-sm h-11 sm:h-10 px-6 group shadow-[0_1px_3px_#10275d40]" asChild>
                 <a href="/sign-up">
                   Start for free
                   <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 transition-transform" />

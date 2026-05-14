@@ -14,7 +14,6 @@ const LOGO_SRC = "/nawiri-dark-logo.png";
 
 const navLinks = [
   { label: "Pillars", hash: "features" },
-  { label: "Ecosystem", hash: "products" },
   { label: "How it works", hash: "how-it-works" },
   { label: "Security", hash: "security" },
   { label: "Stories", hash: "about" },

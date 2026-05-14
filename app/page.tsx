@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/landing/navbar";
 import { Hero } from "@/components/landing/hero";
 import { Features } from "@/components/landing/features";
-import { Products } from "@/components/landing/products";
 import { HowItWorks } from "@/components/landing/how-it-works";
 import { SecurityTrust } from "@/components/landing/security-trust";
 import { Testimonials } from "@/components/landing/testimonials";
@@ -15,7 +14,6 @@ export default function Home() {
       <main className="min-w-0 flex-1">
         <Hero />
         <Features />
-        <Products />
         <HowItWorks />
         <SecurityTrust />
         <Testimonials />
